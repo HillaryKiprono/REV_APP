@@ -2,6 +2,7 @@ package com.example.rev_app;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -32,5 +33,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         String item= adapter.getItem(position);
         Toast.makeText(this, "You clicked" +" "+item, Toast.LENGTH_SHORT).show();
+        Intent intent=new Intent(MainActivity.this,ActivityTwo.class);
+        startActivity(intent);
     }
 }
