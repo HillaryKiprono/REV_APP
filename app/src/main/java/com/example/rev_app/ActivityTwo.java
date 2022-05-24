@@ -13,7 +13,7 @@ import android.widget.Toast;
 
 public class ActivityTwo extends AppCompatActivity implements View.OnClickListener {
 
-    Button btn,calling;
+    Button btn,calling,showloaction;
     TextView text;
 
     @Override
@@ -23,10 +23,15 @@ public class ActivityTwo extends AppCompatActivity implements View.OnClickListen
 
         btn=findViewById(R.id.button);
         text=findViewById(R.id.textView);
+
         calling=findViewById(R.id.dial);
         calling.setOnClickListener(this);
+        showloaction=findViewById(R.id.location);
+
+        showloaction.setOnClickListener(this);
         btn.setOnClickListener(this);
         text.setOnClickListener(this);
+
 //        btn.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
@@ -61,6 +66,11 @@ public class ActivityTwo extends AppCompatActivity implements View.OnClickListen
             case  R.id.dial:
                  Intent intent= new Intent(Intent.ACTION_DIAL, Uri.parse("tel:0727453439"));
                  startActivity(intent);
+                break;
+
+            case  R.id.location:
+                Intent intentlocation= new Intent(Intent.ACTION_VIEW, Uri.parse("geo:-0.5973225,35.323711,17z=5"));
+                startActivity(intentlocation);
                 break;
         }
     }
