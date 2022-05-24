@@ -64,7 +64,7 @@ public class ActivityTwo extends AppCompatActivity implements View.OnClickListen
                 break;
 
             case  R.id.dial:
-                 Intent intent= new Intent(Intent.ACTION_DIAL, Uri.parse("tel:0727453439"));
+                 Intent intent= new Intent(Intent.ACTION_DIAL, Uri.parse("tel:0714413391"));
                  startActivity(intent);
                 break;
 
