@@ -3,6 +3,7 @@ package com.example.rev_app;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -12,7 +13,7 @@ import android.widget.Toast;
 
 public class ActivityTwo extends AppCompatActivity implements View.OnClickListener {
 
-    Button btn;
+    Button btn,calling;
     TextView text;
 
     @Override
@@ -22,6 +23,8 @@ public class ActivityTwo extends AppCompatActivity implements View.OnClickListen
 
         btn=findViewById(R.id.button);
         text=findViewById(R.id.textView);
+        calling=findViewById(R.id.dial);
+        calling.setOnClickListener(this);
         btn.setOnClickListener(this);
         text.setOnClickListener(this);
 //        btn.setOnClickListener(new View.OnClickListener() {
@@ -53,6 +56,11 @@ public class ActivityTwo extends AppCompatActivity implements View.OnClickListen
 
             case  R.id.textView:
                 Toast.makeText(this, "You clicked the text", Toast.LENGTH_SHORT).show();
+                break;
+
+            case  R.id.dial:
+                 Intent intent= new Intent(Intent.ACTION_DIAL, Uri.parse("tel:0727453439"));
+                 startActivity(intent);
                 break;
         }
     }
