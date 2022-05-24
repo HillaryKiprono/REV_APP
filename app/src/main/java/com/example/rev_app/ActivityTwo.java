@@ -48,8 +48,8 @@ public class ActivityTwo extends AppCompatActivity implements View.OnClickListen
 
 
     @Override
-    public void onClick(View v) {
-        switch (v.getId()){
+    public void onClick(View view) {
+        switch (view.getId()){
             case R.id.button:
                 Toast.makeText(this, "You clicked the button", Toast.LENGTH_SHORT).show();
                 break;
